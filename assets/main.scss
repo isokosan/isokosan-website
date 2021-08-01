@@ -1,0 +1,135 @@
+@import 'vuetify/src/styles/settings/_variables.scss';
+#isokosan.v-application {
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    width: 7px;
+    background-color: #fafafa;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  ::-webkit-scrollbar-thumb {
+    width: 7px;
+    background: grey;
+    border-radius: 5px;
+  }
+  .container {
+    @media #{map-get($display-breakpoints, 'xl-only')} {
+      max-width: 1185px;
+    }
+    @media #{map-get($display-breakpoints, 'xs-only')} {
+      padding: 0;
+    }
+  }
+  .v-toolbar__content {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
+      max-width: 1185px;
+      margin: auto;
+    }
+  }
+  .v-dialog--scrollable > .v-card,
+  .v-dialog--scrollable > form > .v-card {
+    .v-card__text {
+      padding-top: 1rem;
+    }
+  }
+  .v-navigation-drawer__content > .v-dialog--scrollable {
+    height: 100%;
+  }
+  .display-4 {
+    font-family: "Telex" !important;
+  }
+  .display-3 {
+    font-family: "Telex" !important;
+  }
+  .display-2 {
+    font-family: "Telex" !important;
+  }
+  .display-1 {
+    font-family: "Telex" !important;
+  }
+  .headline {
+    font-family: "Telex" !important;
+  }
+  .title {
+    font-family: "Telex" !important;
+  }
+  .subtitle-2 {
+    font-family: "Telex" !important;
+  }
+  .subtitle-1 {
+    font-family: "Telex" !important;
+  }
+  .body-2 {
+    font-family: "Telex" !important;
+  }
+  .body-1 {
+    font-family: "Telex" !important;
+  }
+  .caption {
+    font-family: "Telex" !important;
+  }
+  .overline {
+    font-family: "Telex" !important;
+  }
+  .v-btn, .v-tab {
+    text-transform: capitalize;
+  }
+  .theme--light.v-tabs-items {
+    background-color: unset;
+  }
+  .v-input__append-inner--centered {
+    .v-input__append-inner {
+      margin-top: 0;
+      margin-bottom: 0;
+      align-self: center;
+    }
+  }
+  &.v-application--is-ltr .v-list-item__action:first-child,
+  &.v-application--is-ltr .v-list-item__icon:first-child {
+    margin-right: 16px;
+  }
+  a {
+    color: inherit;
+  }
+
+  .v-card {
+    background: #ffffff82;
+    border-radius: 1em;
+    .v-card__title {
+      margin-top: -2px;
+      font-size: 1.6em;
+      line-height: 1.3em;
+      padding: 1em;
+      word-break: break-word;
+      @media #{map-get($display-breakpoints, 'xs-only')} {
+        text-align: center;
+      }
+    }
+    .v-card__title + .v-card__subtitle, .v-card__title + .v-card__text {
+      padding-top: 16px;
+    }
+  }
+
+  @media #{map-get($display-breakpoints, 'xs-only')} {
+    .v-timeline-item__divider {
+      min-width: unset;
+    }
+    .v-timeline--dense .v-timeline-item__body {
+      max-width: unset;
+    }
+    .v-timeline--dense:not(.v-timeline--reverse):before {
+      left: 26px;
+    }
+    .v-timeline-item__body {
+      .timeline-body-title {
+        padding-left: 6px;
+      }
+      .timeline-body-body {
+        padding-top: 10px;
+        margin-left: -14px;
+      }
+    }
+  }
+}
