@@ -23,6 +23,7 @@ export const state = () => ({
       viaMammut: true,
       start: '2020-10',
       end: 'ongoing',
+      href: 'https://coronaschnelltestsolingen.de',
       avatar: 'https://schnelltestsolingen.de/logo.png',
       description: 'Developed and successfully launched the Covid Vaccination booking system for two cities in Germany.',
       skills: ['Parse-Server', 'Node.js', 'Vue.js', 'Vuetify.js', 'Redis']
@@ -116,5 +117,16 @@ export const state = () => ({
 })
 
 export const getters = {
-  skills: state => [...new Set(state.portfolio.map(({ skills }) => skills || []).flat())]
+  skills: (state) => {
+    let skills = {}
+    for (const skill of state.portfolio.map(({ skills }) => skills || []).flat()) {
+      if (!(skill in skills)) {
+        skills[skill] = { name: skill, count: 0 }
+      }
+      skills[skill].count++
+    }
+    skills = Object.values(skills)
+    skills.sort((a, b) => a.count > b.count ? -1 : 1)
+    return skills
+  }
 }

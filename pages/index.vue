@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Intro -->
     <v-card class="mb-10">
       <v-card-title>
         <v-avatar size="5em" class="mr-md-5 mx-auto ml-md-0 mb-3 mb-md-0">
@@ -7,7 +8,7 @@
         </v-avatar>
         <div class="d-flex flex-column justify-start">
           <span class="mb-2 text-center text-md-left">
-            Hi, I'm Deniz, a one-man show self taught full stack web developer
+            Hi, I'm Deniz, a self-taught full stack web developer
           </span>
           <div class="px-1 text-body-2 text-center text-md-left">
             <span>I'm {{ age }}, I live in</span>
@@ -68,7 +69,7 @@
       </v-card-actions>
     </v-card>
 
-    <!-- Projects area -->
+    <!-- Projects -->
     <v-card id="projects" class="mb-10">
       <v-card-title>
         Some of my personal projects and freelance work
@@ -106,6 +107,7 @@
                   </span>
                 </h3>
                 <span>{{ item.start }} - {{ item.end }}</span>
+                <span v-if="item.viaMammut">via <a href="https://https://mammutmedia.eu" target="_blank">Mammut Media</a></span>
               </div>
               <div class="timeline-body-body">
                 <p>{{ item.description }}</p>
@@ -125,20 +127,21 @@
         </v-timeline>
       </v-card-text>
     </v-card>
-    <!-- Skills area -->
+
+    <!-- Skills -->
     <v-card id="skills" class="mb-10">
       <v-card-title>
-        A jumbled up collection of all skills related to developing
+        A sum of my skills
       </v-card-title>
       <v-card-text>
         <v-chip
           v-for="skill in skills"
-          :key="skill"
+          :key="skill.name"
           label
           outlined
           class="mb-2 mr-2"
         >
-          {{ skill }}
+          {{ skill.name }} ({{ skill.count }})
         </v-chip>
       </v-card-text>
     </v-card>
