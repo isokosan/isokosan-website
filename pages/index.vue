@@ -7,7 +7,7 @@
         </v-avatar>
         <div class="d-flex flex-column justify-start">
           <span class="mb-2 text-center text-md-left">
-            Hi, I'm Deniz, a one-man show self taught full stack dev
+            Hi, I'm Deniz, a one-man show self taught full stack web developer
           </span>
           <div class="px-1 text-body-2 text-center text-md-left">
             <span>I'm {{ age }}, I live in</span>
