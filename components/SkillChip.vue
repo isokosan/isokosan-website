@@ -11,7 +11,7 @@ export default {
   name: 'SkillChip',
   props: {
     skill: {
-      type: String,
+      type: Object,
       default: () => null
     },
     skillName: {

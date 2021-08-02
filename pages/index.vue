@@ -144,8 +144,9 @@
       <v-card-subtitle>
         <v-btn-toggle
           v-model="filter"
-          multiple
+          class="v-btn-toggle__with-label flex-wrap"
         >
+          <span class="ma-1">Filter:</span>
           <v-btn
             v-for="category in categories"
             :key="category"
@@ -161,8 +162,8 @@
             v-for="skill in skills"
             :key="skill.name"
             :skill="skill"
-            class="mr-2 mb-2"
-            :class="{ 'd-none': !selectedCategories.includes(skill.category) }"
+            class="mr-2 mb-2 d-none"
+            :class="{ 'd-flex': !selectedCategory || skill.category === selectedCategory }"
           />
         </div>
       </v-card-text>
@@ -180,24 +181,20 @@ export default {
   },
   data () {
     return {
-      filter: [],
+      filter: null,
       age: this.getAge('1989-05-01'),
       mdiGithub,
       mdiLinkedin,
       mdiOpenInNew
     }
   },
-  // head: () => ({
-  //   title: 'Deniz Genctürk'
-  // }),
   computed: {
     ...mapState(['portfolio']),
     ...mapGetters(['skills', 'categories']),
-    selectedCategories () {
-      if (!this.filter.length) {
-        return this.categories
-      }
-      return this.filter.map(index => this.categories[index])
+    selectedCategory () {
+      return this.filter >= 0
+        ? this.categories[this.filter]
+        : null
     }
   },
   methods: {
@@ -214,3 +211,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+#isokosan.v-application {
+  .v-btn-toggle.v-btn-toggle__with-label {
+    > .v-btn.v-btn:nth-child(2) {
+      border-left-width: thin;
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+  }
+}
+</style>
