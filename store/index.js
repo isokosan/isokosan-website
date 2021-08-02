@@ -104,7 +104,7 @@ export const state = () => ({
       href: 'https://www.dolphintherapyland.com',
       description: 'A multilingual company website with a CRM panel built with Django.',
       body: 'A multilingual website for Dolphin Therapy reservations I built as a freelancer. I18n was a challenge in that the site has both static and dynamic content. I used a Django library called Rosetta and combined it with a custom system for dynamic content translations. This was also the first website where I used ajax for some dynamic components.',
-      skills: ['Jquery', 'Django', 'Python', 'Ajax', 'LESS', 'Gulp', 'Webpack', 'Memcached', 'Nginx', 'Cloudflare']
+      skills: ['Jquery', 'Django', 'Python', 'LESS', 'Gulp', 'Webpack', 'Memcached', 'Nginx', 'Cloudflare']
     },
     {
       title: 'Decora Lamps',
@@ -120,7 +120,13 @@ export const state = () => ({
   articles: [
     {
       title: 'Using Sanity.io and Nuxt.js for a complete localization solution',
-      href: 'https://medium.com/@denizgentrk/nuxt-js-and-sanity-io-full-localization-solution-1239e822fd9b'
+      href: 'https://medium.com/@denizgentrk/nuxt-js-and-sanity-io-full-localization-solution-1239e822fd9b',
+      date: '14.10.2019'
+    },
+    {
+      title: 'Serving a fully localized sitemap with generated routes on nuxt.js',
+      href: 'https://medium.com/@denizgentrk/serving-a-fully-localized-sitemap-with-generated-routes-on-nuxt-js-94e1c27f5c91',
+      date: '07.07.2020'
     }
   ],
   skills: {
@@ -141,6 +147,7 @@ export const state = () => ({
     SASS: { category: 'Frontend', subCategory: 'CSS', icon: 'https://external-content.duckduckgo.com/ip3/sass-lang.com.ico' },
     Stylus: { category: 'Frontend', subCategory: 'CSS', icon: 'https://external-content.duckduckgo.com/ip3/stylus-lang.com.ico' },
     LESS: { category: 'Frontend', subCategory: 'CSS', icon: 'https://external-content.duckduckgo.com/ip3/lesscss.org.ico' },
+    CSS: { category: 'Frontend', subCategory: 'CSS', icon: '/icons/css.png' },
     Husky: { category: 'Frontend', subCategory: 'Tooling' },
     CircleCI: { category: 'Frontend', subCategory: 'CI-CD', icon: 'https://external-content.duckduckgo.com/ip3/circleci.com.ico' },
     Cordova: { category: 'Frontend', subCategory: 'Cross-platform Apps', icon: 'https://external-content.duckduckgo.com/ip3/cordova.apache.org.ico' },
@@ -150,7 +157,7 @@ export const state = () => ({
     OAuth2: { category: 'Backend', subCategory: 'Auth', icon: 'https://external-content.duckduckgo.com/ip3/oauth.net.ico' },
     'HTML5 History API': { category: 'Frontend', subCategory: 'HTML5', icon: 'https://external-content.duckduckgo.com/ip3/html.com.ico' },
     'Socket.io': { category: 'Backend', subCategory: 'Websockets', icon: 'https://external-content.duckduckgo.com/ip3/socket.io.ico' },
-    Beautifulsoup4: { category: 'Web Scraping', subCategory: 'Web Scraping', language: 'Python' },
+    Beautifulsoup4: { category: 'Web Scraping', language: 'Python' },
     Python: { category: 'Languages', icon: 'https://external-content.duckduckgo.com/ip3/www.python.org.ico' },
     PHP: { category: 'Languages', icon: 'https://external-content.duckduckgo.com/ip3/www.php.net.ico' },
     Django: { category: 'Backend', subCategory: 'Framework', language: 'Python', icon: 'https://external-content.duckduckgo.com/ip3/www.djangoproject.com.ico' },
@@ -177,7 +184,9 @@ export const state = () => ({
     'Google Tag Manager': { category: 'Third Party Software', subCategory: 'Analytics', icon: 'https://external-content.duckduckgo.com/ip3/developers.google.com.ico' },
     'Google Doubleclick': { category: 'Third Party Software', subCategory: 'Ads', icon: '/icons/doubleclick.png' },
     Nginx: { category: 'Backend', subCategory: 'Proxy Server', icon: 'https://external-content.duckduckgo.com/ip3/nginx.org.ico' },
-    Apache: { category: 'Backend', subCategory: 'Proxy Server', icon: 'https://httpd.apache.org/favicon.ico' }
+    Apache: { category: 'Backend', subCategory: 'Proxy Server', icon: 'https://httpd.apache.org/favicon.ico' },
+    'Gmail API': { category: 'Third Party Software', subCategory: 'Google APIs', icon: 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico' },
+    'Google People API': { category: 'Third Party Software', subCategory: 'Google APIs', icon: 'https://www.gstatic.com/images/branding/product/1x/contacts_48dp.png' }
   }
 })
 

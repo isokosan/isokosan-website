@@ -1,9 +1,7 @@
 <template>
   <div class="skill-chip">
-    <v-tooltip bottom>
-      <span>{{ item.category }}</span>
-      <span v-if="item.subCategory"> | {{ item.subCategory }}</span>
-      <span v-if="item.language"> | {{ item.language }}</span>
+    <v-tooltip v-if="tooltip" bottom>
+      <span>{{ tooltip }}</span>
       <template #activator="{ on }">
         <div class="d-flex align-center" v-on="on">
           <img v-if="item.icon" :src="item.icon" :alt="item.name">
@@ -11,6 +9,10 @@
         </div>
       </template>
     </v-tooltip>
+    <div v-else class="d-flex align-center">
+      <img v-if="item.icon" :src="item.icon" :alt="item.name">
+      {{ item.name }}
+    </div>
   </div>
 </template>
 
@@ -26,6 +28,10 @@ export default {
     skillName: {
       type: String,
       default: () => null
+    },
+    hideCategory: {
+      type: Boolean,
+      default: () => false
     }
   },
   computed: {
@@ -38,6 +44,17 @@ export default {
         return this.skills.find(({ name }) => name === this.skillName)
       }
       return null
+    },
+    tooltip () {
+      const text = []
+      if (!this.hideCategory) {
+        text.push(this.item.category)
+      }
+      this.item.subCategory && text.push(this.item.subCategory)
+      this.item.language && text.push(this.item.language)
+      return text.length
+        ? text.join(' | ')
+        : null
     },
     color () {
       switch (this.item.category) {

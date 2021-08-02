@@ -12,15 +12,23 @@
         href="#projects"
         @click.prevent="scrollTo('#projects')"
       >
-        Work History
+        Projects
       </v-btn>
       <v-btn
         text
         :small="$vuetify.breakpoint.xsOnly"
-        href="#skills"
-        @click.prevent="scrollTo('#skills')"
+        href="#stack"
+        @click.prevent="scrollTo('#stack')"
       >
-        Skills
+        Stack
+      </v-btn>
+      <v-btn
+        text
+        :small="$vuetify.breakpoint.xsOnly"
+        href="#articles"
+        @click.prevent="scrollTo('#articles')"
+      >
+        Articles
       </v-btn>
       <v-spacer class="d-md-none" />
       <v-btn

@@ -100,9 +100,9 @@
     </v-card>
 
     <!-- Skills -->
-    <v-card id="skills" class="mb-10">
+    <v-card id="stack" class="mb-10">
       <v-card-title>
-        A sum of my skills
+        What I've worked with over the years
       </v-card-title>
       <v-card-subtitle>
         <v-btn-toggle
@@ -119,16 +119,47 @@
           </v-btn>
         </v-btn-toggle>
       </v-card-subtitle>
-      <v-card-text style="min-height: 400px; width: 100%;">
+      <v-card-text style="min-height: 200px; width: 100%;">
         <div ref="isotope">
           <skill-chip
             v-for="skill in skills"
             :key="skill.name"
             :skill="skill"
+            :hide-category="Boolean(filterCategory)"
             class="mr-2 mb-2"
             :class="(skill.category || '').replace(/\s/g, '')"
           />
         </div>
+      </v-card-text>
+    </v-card>
+
+    <!-- Skills -->
+    <v-card id="stack" class="mb-10">
+      <v-card-title>
+        My articles on Medium
+      </v-card-title>
+      <v-card-subtitle>
+        I don't write much but I hope to write more to give back to the community.
+      </v-card-subtitle>
+      <v-card-text>
+        <v-list-item
+          v-for="(article, index) in articles"
+          :key="index"
+          :href="article.href"
+          target="_blank"
+        >
+          <v-list-item-avatar>
+            <v-img src="/icons/medium.png" />
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>
+              {{ article.title }}
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              {{ article.date }}
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
       </v-card-text>
     </v-card>
   </div>
@@ -154,7 +185,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['portfolio']),
+    ...mapState(['portfolio', 'articles']),
     ...mapGetters(['skills', 'categories']),
     filterCategory () {
       return this.filter >= 0
@@ -214,10 +245,13 @@ export default {
 <style lang="scss">
 #isokosan.v-application {
   .v-btn-toggle.v-btn-toggle__with-label {
-    > .v-btn.v-btn:nth-child(2) {
+    > .v-btn.v-btn {
+      margin: 3px;
       border-left-width: thin;
       border-top-left-radius: inherit;
       border-bottom-left-radius: inherit;
+      border-top-right-radius: inherit;
+      border-bottom-right-radius: inherit;
     }
   }
 }
