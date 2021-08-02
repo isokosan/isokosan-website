@@ -125,8 +125,8 @@
             v-for="skill in skills"
             :key="skill.name"
             :skill="skill"
-            class="mr-2 mb-2 grid-item"
-            :class="`${skill.category}`"
+            class="mr-2 mb-2"
+            :class="(skill.category || '').replace(/\s/g, '')"
           />
         </div>
       </v-card-text>
@@ -158,16 +158,13 @@ export default {
     ...mapGetters(['skills', 'categories']),
     filterCategory () {
       return this.filter >= 0
-        ? this.categories[this.filter]
-        : '*'
+        ? (this.categories[this.filter] || '').replace(/\s/g, '')
+        : null
     },
     isotopeOptions () {
       return {
-        itemSelector: '.grid-item',
+        itemSelector: '.skill-chip',
         layoutMode: 'fitRows',
-        // masonryHorizontal: {
-        //   rowHeight: 0
-        // },
         filter: this.filterCategory
       }
     }
@@ -175,8 +172,7 @@ export default {
   watch: {
     isotopeOptions () {
       this.isotope.arrange({
-        // layoutMode: 'masonryHorizontal',
-        filter: itemElem => this.filterCategory === '*' || itemElem.classList.contains(this.filterCategory)
+        filter: el => this.filterCategory === null || el.classList.contains(this.filterCategory)
       })
     }
   },

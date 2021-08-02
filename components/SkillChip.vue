@@ -1,7 +1,16 @@
 <template>
   <div class="skill-chip">
-    <img v-if="item.icon" :src="item.icon" :alt="item.name">
-    {{ item.name }}
+    <v-tooltip bottom>
+      <span>{{ item.category }}</span>
+      <span v-if="item.subCategory"> | {{ item.subCategory }}</span>
+      <span v-if="item.language"> | {{ item.language }}</span>
+      <template #activator="{ on }">
+        <div class="d-flex align-center" v-on="on">
+          <img v-if="item.icon" :src="item.icon" :alt="item.name">
+          {{ item.name }}
+        </div>
+      </template>
+    </v-tooltip>
   </div>
 </template>
 
@@ -52,9 +61,7 @@ export default {
 
 <style lang="scss">
 .skill-chip {
-  display: flex;
-  align-items: center;
-  margin: 0 2em 2em 0;
+  margin: 0 1em 1em 0;
   padding: 0.2em 1em;
   border-radius: 1em;
   border: 1px solid #00000020;
