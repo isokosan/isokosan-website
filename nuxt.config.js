@@ -1,20 +1,27 @@
 import colors from 'vuetify/es5/util/colors'
 
+const description = "Hi, I'm Deniz and this is my personal website where I share my work experience as a web developer."
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - isokosan',
-    title: 'isokosan',
+    titleTemplate: '%s | isokosan',
+    title: 'Deniz Genctürk | Self-taught Full Stack Web Developer',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: description },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: 'https://isokosan.com' },
+      { hid: 'og:title', property: 'og:title', content: 'Deniz Genctürk | isokosan' },
+      { hid: 'og:image', property: 'og:image', content: 'https://isokosan.com/logo_hr.webp' },
+      { hid: 'og:description', property: 'og:description', content: description }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -41,11 +48,11 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    // '@nuxt/content'
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  // content: {},
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

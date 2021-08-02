@@ -1,5 +1,5 @@
 <template>
-  <v-app id="isokosan">
+  <v-app id="isokosan" dark>
     <v-app-bar
       flat
       color="transparent"

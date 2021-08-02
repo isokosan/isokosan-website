@@ -45,7 +45,7 @@ export const state = () => ({
       viaMammut: true,
       href: 'https://apps.apple.com/us/app/mensch-solingen/id1464119250',
       description: 'Building the backend of the city application for Solingen.',
-      skills: ['Parse-Server', 'Node.js', 'Bull-mq', 'Scraping with Node.js']
+      skills: ['Parse-Server', 'Node.js', 'Bull-mq', 'Xray']
     },
     {
       title: 'Enteria Energy',
@@ -74,7 +74,7 @@ export const state = () => ({
       href: 'https://coin-deck.com',
       description: 'A cryptocurrency filter and sort index built with laravel and jquery.',
       body: 'A mobile-friendly cryptocurrency index I built after coming up with the idea with my cousin. This project got me into using a lot of third party APIs and web-scraping. I also developed a good solution for really fast filtering and sorting of lists by different attributes by using Redis. I also used a hashing system to keep each unique filter result cached. In order to make sure the data on the site was always up to date I utilized heavy use of scheduling and queueing. For tracking errors I used Sentry as a third-party API for both the server & client side, integrating source-maps.',
-      skills: ['Jquery', 'Beautifulsoup', 'Selenium', 'Laravel', 'SCSS', 'Vagrant', 'Webpack', 'Sentry', 'Stripe', 'OAuth2', 'PostgreSQL']
+      skills: ['Jquery', 'Beautifulsoup', 'Selenium', 'Laravel', 'SASS', 'Vagrant', 'Webpack', 'Sentry', 'Stripe', 'OAuth2', 'PostgreSQL']
     },
     {
       title: 'Süslü Sözlük',
@@ -113,7 +113,47 @@ export const state = () => ({
       title: 'Using Sanity.io and Nuxt.js for a complete localization solution',
       href: 'https://medium.com/@denizgentrk/nuxt-js-and-sanity-io-full-localization-solution-1239e822fd9b'
     }
-  ]
+  ],
+  skills: {
+    'Node.js': { category: 'Backend', icon: 'https://external-content.duckduckgo.com/ip3/nodejs.org.ico' },
+    Firebase: { category: 'Backend', icon: 'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/favicon.ico' },
+    Redis: { category: 'Database', icon: 'https://external-content.duckduckgo.com/ip3/redis.io.ico' },
+    'Parse-Server': { category: 'Backend', subCategory: 'Framework', language: 'Node.js', icon: 'https://external-content.duckduckgo.com/ip3/parseplatform.org.ico' },
+    PostgreSQL: { category: 'Database', icon: 'https://external-content.duckduckgo.com/ip3/www.postgresql.org.ico' },
+    'Vuetify.js': { category: 'Frontend', icon: 'https://external-content.duckduckgo.com/ip3/vuetifyjs.com.ico' },
+    ESLint: { category: 'Frontend', icon: 'https://external-content.duckduckgo.com/ip3/eslint.org.ico' },
+    Jquery: { category: 'Frontend', icon: 'https://external-content.duckduckgo.com/ip3/jquery.com.ico' },
+    'Electron.js': { category: 'Frontend', subCategory: 'Cross-platform Apps', icon: 'https://external-content.duckduckgo.com/ip3/www.electronjs.org.ico' },
+    'Bull-mq': { category: 'Backend', subCategory: 'Job Scheduling', icon: 'https://external-content.duckduckgo.com/ip3/docs.bullmq.io.ico' },
+    Xray: { category: 'Backend', subCategory: 'Web Scraping', language: 'Node.js' },
+    'Nuxt.js': { category: 'Frontend', icon: 'https://external-content.duckduckgo.com/ip3/nuxtjs.org.ico' },
+    'Sanity.io': { category: 'Backend', subCategory: 'Headless CMS', icon: 'https://external-content.duckduckgo.com/ip3/www.sanity.io.ico' },
+    SASS: { category: 'Frontend', subCategory: 'CSS', icon: 'https://external-content.duckduckgo.com/ip3/sass-lang.com.ico' },
+    Stylus: { category: 'Frontend', subCategory: 'CSS', icon: 'https://external-content.duckduckgo.com/ip3/stylus-lang.com.ico' },
+    LESS: { category: 'Frontend', subCategory: 'CSS', icon: 'https://external-content.duckduckgo.com/ip3/lesscss.org.ico' },
+    Husky: { category: 'Frontend', subCategory: 'Tooling' },
+    CircleCI: { category: 'Frontend', subCategory: 'CI-CD', icon: 'https://external-content.duckduckgo.com/ip3/circleci.com.ico' },
+    Cordova: { category: 'Frontend', subCategory: 'Cross-platform Apps', icon: 'https://external-content.duckduckgo.com/ip3/cordova.apache.org.ico' },
+    'JWT Tokens': { category: 'Backend', subCategory: 'Auth' },
+    PostGIS: { category: 'Database', icon: 'https://external-content.duckduckgo.com/ip3/postgis.net.ico' },
+    Stripe: { category: 'Platforms', icon: 'https://external-content.duckduckgo.com/ip3/stripe.com.ico' },
+    OAuth2: { category: 'Backend', subCategory: 'Auth', icon: 'https://external-content.duckduckgo.com/ip3/oauth.net.ico' },
+    'HTML5 History API': { category: 'Frontend', subCategory: 'HTML5', icon: 'https://external-content.duckduckgo.com/ip3/html.com.ico' },
+    'Socket.io': { category: 'Backend', subCategory: 'Websockets', icon: 'https://external-content.duckduckgo.com/ip3/socket.io.ico' },
+    Beautifulsoup: { category: 'Backend', subCategory: 'Web Scraping', language: 'Python' },
+    Django: { category: 'Backend', subCategory: 'Framework', language: 'Python', icon: 'https://external-content.duckduckgo.com/ip3/www.djangoproject.com.ico' },
+    Laravel: { category: 'Backend', subCategory: 'Framework', language: 'PHP', icon: 'https://external-content.duckduckgo.com/ip3/laravel.com.ico' },
+    Express: { category: 'Backend', subCategory: 'Framework', language: 'Node.js', icon: 'https://external-content.duckduckgo.com/ip3/expressjs.com.ico' },
+    'Vue.js': { category: 'Frontend', subCategory: 'Framework', language: 'Javascript', icon: 'https://vuejs.org/images/icons/favicon-32x32.png' },
+    Gulp: { category: 'Frontend', subCategory: 'Tooling', icon: 'https://external-content.duckduckgo.com/ip3/gulpjs.com.ico' },
+    Vagrant: { category: 'Devtools', subCategory: 'VMs', icon: 'https://external-content.duckduckgo.com/ip3/www.vagrantup.com.ico' },
+    Docker: { category: 'Devtools', subCategory: 'VMs', icon: 'https://external-content.duckduckgo.com/ip3/www.docker.com.ico' },
+    Kubernetes: { category: 'Backend', subCategory: 'Cloudservers', icon: 'https://external-content.duckduckgo.com/ip3/kubernetes.io.ico' },
+    Helm: { category: 'Devtools', icon: 'https://external-content.duckduckgo.com/ip3/helm.sh.ico' },
+    MySQL: { category: 'Database', icon: 'https://external-content.duckduckgo.com/ip3/www.mysql.com.ico' },
+    Crontab: { category: 'Backend', subCategory: 'Job Scheduling', icon: 'https://external-content.duckduckgo.com/ip3/crontab.guru.ico' },
+    Celery: { category: 'Backend', subCategory: 'Queues', icon: 'https://external-content.duckduckgo.com/ip3/docs.celeryproject.org.ico' }
+  }
 })
 
 export const getters = {
@@ -121,12 +161,13 @@ export const getters = {
     let skills = {}
     for (const skill of state.portfolio.map(({ skills }) => skills || []).flat()) {
       if (!(skill in skills)) {
-        skills[skill] = { name: skill, count: 0 }
+        skills[skill] = { name: skill, count: 0, ...(state.skills[skill] || {}) }
       }
       skills[skill].count++
     }
     skills = Object.values(skills)
     skills.sort((a, b) => a.count > b.count ? -1 : 1)
     return skills
-  }
+  },
+  categories: state => [...new Set(Object.values(state.skills).map(({ category }) => category))]
 }
