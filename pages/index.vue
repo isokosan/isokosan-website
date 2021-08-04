@@ -134,7 +134,7 @@
     </v-card>
 
     <!-- Skills -->
-    <v-card id="stack" class="mb-10">
+    <v-card id="articles" class="mb-10">
       <v-card-title>
         My articles on Medium
       </v-card-title>
@@ -142,24 +142,26 @@
         I don't write much but I hope to write more to give back to the community.
       </v-card-subtitle>
       <v-card-text>
-        <v-list-item
-          v-for="(article, index) in articles"
-          :key="index"
-          :href="article.href"
-          target="_blank"
-        >
-          <v-list-item-avatar>
-            <v-img src="/icons/medium.png" />
-          </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title>
-              {{ article.title }}
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              {{ article.date }}
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+        <v-list two-line :three-line="$vuetify.breakpoint.xsOnly">
+          <v-list-item
+            v-for="(article, index) in articles"
+            :key="index"
+            :href="article.href"
+            target="_blank"
+          >
+            <v-list-item-avatar>
+              <v-img src="/icons/medium.png" />
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-subtitle class="text-body-1 black--text">
+                {{ article.title }}
+              </v-list-item-subtitle>
+              <v-list-item-subtitle>
+                {{ article.date }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
       </v-card-text>
     </v-card>
   </div>

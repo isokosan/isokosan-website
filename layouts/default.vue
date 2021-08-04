@@ -3,12 +3,12 @@
     <v-app-bar
       flat
       color="transparent"
-      class="flex-grow-0"
+      class="flex-grow-0 px-0 px-md-2"
     >
-      <v-spacer class="d-none d-md-block" />
       <v-btn
         text
-        :small="$vuetify.breakpoint.xsOnly"
+        :small="$vuetify.breakpoint.xsOnly && !tiny"
+        :x-small="tiny"
         href="#projects"
         @click.prevent="scrollTo('#projects')"
       >
@@ -16,7 +16,8 @@
       </v-btn>
       <v-btn
         text
-        :small="$vuetify.breakpoint.xsOnly"
+        :small="$vuetify.breakpoint.xsOnly && !tiny"
+        :x-small="tiny"
         href="#stack"
         @click.prevent="scrollTo('#stack')"
       >
@@ -24,19 +25,21 @@
       </v-btn>
       <v-btn
         text
-        :small="$vuetify.breakpoint.xsOnly"
+        :small="$vuetify.breakpoint.xsOnly && !tiny"
+        :x-small="tiny"
         href="#articles"
         @click.prevent="scrollTo('#articles')"
       >
         Articles
       </v-btn>
-      <v-spacer class="d-md-none" />
+      <v-spacer />
       <v-btn
         text
         :small="$vuetify.breakpoint.xsOnly"
         :icon="$vuetify.breakpoint.xsOnly"
         href="https://github.com/isokosan"
         target="_blank"
+        class="mr-2 mr-md-0"
       >
         <v-icon :left="$vuetify.breakpoint.mdAndUp">
           {{ mdiGithub }}
@@ -49,6 +52,7 @@
         :icon="$vuetify.breakpoint.xsOnly"
         href="https://www.linkedin.com/in/isokosan"
         target="_blank"
+        class="mr-2 mr-md-0"
       >
         <v-icon :left="$vuetify.breakpoint.mdAndUp">
           {{ mdiLinkedin }}
@@ -61,6 +65,7 @@
         :icon="$vuetify.breakpoint.xsOnly"
         href="https://www.indiehackers.com/isokosan"
         target="_blank"
+        class="mr-2 mr-md-0"
       >
         <v-avatar tile :size="$vuetify.breakpoint.xsOnly ? '18px' : '24px'">
           <v-img contain src="./ih100.png" />
@@ -123,6 +128,11 @@ export default {
     mdiLinkedin,
     mdiOpenInNew
   }),
+  computed: {
+    tiny () {
+      return this.$vuetify.breakpoint.width <= 360
+    }
+  },
   methods: {
     scrollTo (target) {
       this.$vuetify.goTo(target, {

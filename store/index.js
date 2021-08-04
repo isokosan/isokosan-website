@@ -23,7 +23,7 @@ export const state = () => ({
       viaMammut: true,
       start: '2020-05',
       end: '2020-12',
-      avatar: 'https://stellenportal-solingen.de/1b5cb45d52081fab2ec4faf4f128fc17.ico/apple-icon.png',
+      avatar: '/icons/stellenportal.png',
       description: 'Redid the job portal of Solingen with a student developer and a senior designer from Mammut Media.',
       skills: ['Parse-Server', 'Node.js', 'MongoDB', 'Vue.js', 'Vuetify.js', 'Nuxt.js', 'Redis', 'Helm', 'Kubernetes', 'Husky', 'Docker', 'Vercel']
     },
