@@ -25,7 +25,7 @@ export const state = () => ({
       end: '2020-12',
       avatar: '/icons/stellenportal.png',
       description: 'Redid the job portal of Solingen with a student developer and a senior designer from Mammut Media.',
-      skills: ['Parse-Server', 'Node.js', 'MongoDB', 'Vue.js', 'Vuetify.js', 'Nuxt.js', 'Redis', 'Helm', 'Kubernetes', 'Husky', 'Docker', 'Vercel']
+      skills: ['Parse-Server', 'Node.js', 'MongoDB', 'Vue.js', 'Vuetify.js', 'Nuxt.js', 'Redis', 'Helm', 'Kubernetes', 'Husky', 'Docker', 'Vercel', 'Elasticsearch']
     },
     {
       title: 'COVID Test Center Booking Systems',
@@ -35,7 +35,7 @@ export const state = () => ({
       href: 'https://coronaschnelltestsolingen.de',
       avatar: 'https://schnelltestsolingen.de/logo.png',
       description: 'Developed and successfully launched the Covid Vaccination booking system for two cities in Germany.',
-      skills: ['Parse-Server', 'Node.js', 'MongoDB', 'Vue.js', 'Vuetify.js', 'Redis', 'Helm', 'Kubernetes', 'Husky', 'Sentry', 'Docker', 'Vercel']
+      skills: ['Parse-Server', 'Node.js', 'MongoDB', 'Vue.js', 'Vuetify.js', 'Redis', 'Helm', 'Kubernetes', 'Husky', 'Sentry', 'Docker', 'Vercel', 'Elasticsearch']
     },
     {
       title: 'Mammut OS (not maintained)',
@@ -175,7 +175,7 @@ export const state = () => ({
     Storybook: { category: 'Frontend', subCategory: 'Tooling', icon: 'https://external-content.duckduckgo.com/ip3/storybook.js.org.ico' },
     Selenium: { category: 'Web Scraping', subCategory: 'Web Driver', icon: 'https://external-content.duckduckgo.com/ip3/www.selenium.dev.ico' },
     Webpack: { category: 'Frontend', subCategory: 'Tooling', icon: 'https://external-content.duckduckgo.com/ip3/webpack.js.org.ico' },
-    Sentry: { category: 'Third Party Software', subCategory: 'Error Tracking', icon: 'https://external-content.duckduckgo.com/ip3/sentry.io.ico' },
+    Sentry: { category: 'Libraries/APIs', subCategory: 'Error Tracking', icon: 'https://external-content.duckduckgo.com/ip3/sentry.io.ico' },
     'New Relic': { category: 'Third Party Software', subCategory: 'Error Tracking', icon: 'https://external-content.duckduckgo.com/ip3/newrelic.com.ico' },
     iyzico: { category: 'Third Party Software', subCategory: 'Payments', icon: 'https://external-content.duckduckgo.com/ip3/www.iyzico.com.ico' },
     Firestore: { category: 'Databases', subCategory: 'Cloud Database', icon: 'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/favicon.ico' },
@@ -186,7 +186,9 @@ export const state = () => ({
     Nginx: { category: 'Backend', subCategory: 'Proxy Server', icon: 'https://external-content.duckduckgo.com/ip3/nginx.org.ico' },
     Apache: { category: 'Backend', subCategory: 'Proxy Server', icon: 'https://httpd.apache.org/favicon.ico' },
     'Gmail API': { category: 'Third Party Software', subCategory: 'Google APIs', icon: 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico' },
-    'Google People API': { category: 'Third Party Software', subCategory: 'Google APIs', icon: 'https://www.gstatic.com/images/branding/product/1x/contacts_48dp.png' }
+    'Google People API': { category: 'Third Party Software', subCategory: 'Google APIs', icon: 'https://www.gstatic.com/images/branding/product/1x/contacts_48dp.png' },
+    Elasticsearch: { category: 'Third Party Software', subCategory: 'Search', icon: 'https://external-content.duckduckgo.com/ip3/www.elastic.co.ico' },
+    Vercel: { category: 'Tools', subCategory: 'Deployment', icon: 'https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/57x57.png' }
   }
 })
 
