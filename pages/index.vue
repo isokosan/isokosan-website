@@ -39,6 +39,11 @@
       <v-card-text class="text-h6">
         I'm looking to partner up as a developer or also an investor in any kind of project, but I'm mostly attracted to niche B2B SaaS ideas. Feel free to contact me via <a href="https://www.linkedin.com/in/isokosan" target="_blank">linkedin</a>, my <a href="https://github.com/isokosan" target="_blank">github</a>, or you can find me at <a href="https://www.indiehackers.com/isokosan" target="_blank">indie hackers</a>.
       </v-card-text>
+      <v-card-text>
+        <span v-if="languagesText">I speak {{ languagesText }}.</span>
+        <span>Some of my other interests are: {{ interests.join(', ') }}.</span>
+        <span>Some of my learning goals this year: {{ learningGoals.join(', ') }}.</span>
+      </v-card-text>
     </v-card>
 
     <!-- Projects -->
@@ -99,7 +104,7 @@
       </v-card-text>
     </v-card>
 
-    <!-- Skills -->
+    <!-- Stack -->
     <v-card id="stack" class="mb-10">
       <v-card-title>
         What I've worked with over the years
@@ -122,7 +127,7 @@
       <v-card-text style="min-height: 200px; width: 100%;">
         <div ref="isotope">
           <skill-chip
-            v-for="skill in skills"
+            v-for="skill in stack"
             :key="skill.name"
             :skill="skill"
             :hide-category="Boolean(filterCategory)"
@@ -133,7 +138,7 @@
       </v-card-text>
     </v-card>
 
-    <!-- Skills -->
+    <!-- Articles -->
     <v-card id="articles" class="mb-10">
       <v-card-title>
         My articles on Medium
@@ -178,7 +183,6 @@ export default {
   data () {
     return {
       filter: null,
-      age: this.getAge('1989-05-01'),
       isotope: null,
       isotopeTimeout: null,
       mdiGithub,
@@ -187,8 +191,32 @@ export default {
     }
   },
   computed: {
-    ...mapState(['portfolio', 'articles']),
-    ...mapGetters(['skills', 'categories']),
+    ...mapState([
+      'portfolio',
+      'articles',
+      'interests',
+      'learningGoals',
+      'languages'
+    ]),
+    ...mapGetters([
+      'age',
+      'stack',
+      'categories'
+    ]),
+    languagesText () {
+      if (!this.languages || !this.languages.length) {
+        return ''
+      }
+      const langs = this.languages.map((lang) => {
+        let text = `${lang.flag} ${lang.name}`
+        if (lang.level) {
+          text += ` (${lang.level})`
+        }
+        return text
+      })
+      const lastItem = langs.pop()
+      return langs.join(', ') + ' and ' + lastItem
+    },
     filterCategory () {
       return this.filter >= 0
         ? (this.categories[this.filter] || '').replace(/\s/g, '')
@@ -200,7 +228,7 @@ export default {
         layoutMode: 'fitRows',
         filter: this.filterCategory
       }
-    }
+    },
   },
   watch: {
     isotopeOptions () {

@@ -35,13 +35,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['skills']),
+    ...mapGetters(['stack']),
     item () {
       if (this.skill && this.skill.name) {
         return this.skill
       }
       if (this.skillName && !this.skill) {
-        return this.skills.find(({ name }) => name === this.skillName)
+        return this.stack.find(({ name }) => name === this.skillName)
       }
       return null
     },

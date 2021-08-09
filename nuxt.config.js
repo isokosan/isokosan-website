@@ -8,7 +8,6 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s | isokosan',
     title: 'Deniz Genctürk | Self-taught Full Stack Web Developer',
     htmlAttrs: {
       lang: 'en'
