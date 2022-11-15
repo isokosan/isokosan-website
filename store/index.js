@@ -165,7 +165,7 @@ export const state = () => ({
     Django: { category: 'Backend', subCategory: 'Framework', language: 'Python', icon: 'https://external-content.duckduckgo.com/ip3/www.djangoproject.com.ico' },
     Laravel: { category: 'Backend', subCategory: 'Framework', language: 'PHP', icon: 'https://external-content.duckduckgo.com/ip3/laravel.com.ico' },
     Express: { category: 'Backend', subCategory: 'Framework', language: 'Node.js', icon: 'https://external-content.duckduckgo.com/ip3/expressjs.com.ico' },
-    'Vue.js': { category: 'Frontend', subCategory: 'Framework', language: 'Javascript', icon: 'https://vuejs.org/images/icons/favicon-32x32.png' },
+    'Vue.js': { category: 'Frontend', subCategory: 'Framework', language: 'Javascript', icon: 'https://vuejs.org/logo.svg' },
     Gulp: { category: 'Frontend', subCategory: 'Tooling', icon: 'https://external-content.duckduckgo.com/ip3/gulpjs.com.ico' },
     Vagrant: { category: 'Devtools', subCategory: 'VMs', icon: 'https://external-content.duckduckgo.com/ip3/www.vagrantup.com.ico' },
     Docker: { category: 'Devtools', subCategory: 'VMs', icon: 'https://external-content.duckduckgo.com/ip3/www.docker.com.ico' },

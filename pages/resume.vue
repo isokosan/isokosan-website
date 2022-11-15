@@ -70,11 +70,6 @@ export default {
       mdiOpenInNew
     }
   },
-  head () {
-    return {
-      title: 'Deniz Genctürk Resume ' + (new Date()).toLocaleDateString()
-    }
-  },
   computed: {
     ...mapState([
       'portfolio',
@@ -101,6 +96,11 @@ export default {
       })
       const lastItem = langs.pop()
       return langs.join(', ') + ' and ' + lastItem
+    }
+  },
+  head () {
+    return {
+      title: 'Deniz Genctürk Resume ' + (new Date()).toLocaleDateString()
     }
   }
 }

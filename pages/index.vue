@@ -228,7 +228,7 @@ export default {
         layoutMode: 'fitRows',
         filter: this.filterCategory
       }
-    },
+    }
   },
   watch: {
     isotopeOptions () {
